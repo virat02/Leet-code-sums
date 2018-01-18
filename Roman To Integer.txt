@@ -1,0 +1,28 @@
+class Solution {
+    public int romanToInt(String s) {
+        
+        int sum = 0;
+        
+        if(s.indexOf("IV")!=-1){sum-=2;}
+        if(s.indexOf("IX")!=-1){sum-=2;}
+        if(s.indexOf("XL")!=-1){sum-=20;}
+        if(s.indexOf("XC")!=-1){sum-=20;}
+        if(s.indexOf("CD")!=-1){sum-=200;}
+        if(s.indexOf("CM")!=-1){sum-=200;}
+        
+        char sArray [] = s.toCharArray();
+        
+        for(int i = 0; i < s.length() ; i++)
+        {   
+            if (sArray[i] == 'I') {sum += 1;}
+            if (sArray[i] == 'V') {sum += 5;}
+            if (sArray[i] == 'X') {sum += 10;}
+            if (sArray[i] == 'L') {sum += 50;}
+            if (sArray[i] == 'C') {sum += 100;}
+            if (sArray[i] == 'D') {sum += 500;}
+            if (sArray[i] == 'M') {sum += 1000;}
+        }
+        
+        return sum;
+    }
+}
